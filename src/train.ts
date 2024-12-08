@@ -1,3 +1,22 @@
+// H-TASK:
+
+// shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
+// MASALAN: getPositive([1, -4, 2]) return qiladi "12"
+
+// yasalani yechimi
+
+function getPositive(arr: number[]): string {
+  return arr
+    .filter((num) => num > 0)
+    .join('');
+}
+console.log(getPositive([1, -3, 5]));
+
+
+
+
+
+
 // TASK G:
 
 // Yagona parametrga ega function tuzing.
@@ -10,10 +29,10 @@
 
 //  Misol yechilishi
 
-function getHighestIndex(arr: number[]): number {
-  let max = Math.max(...arr);
-  return arr.indexOf(max);
-}
+// function getHighestIndex(arr: number[]): number {
+//   let max = Math.max(...arr);
+//   return arr.indexOf(max);
+// }
 
-// Misol:
-console.log(getHighestIndex([5, 21, 12, 21, 8]));
+// // Misol:
+// console.log(getHighestIndex([5, 21, 12, 21, 8]));

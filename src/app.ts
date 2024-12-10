@@ -1,9 +1,12 @@
 import express from "express";
 import path from "path";
+import router from "./router";
 
 // expressning 4 ta bo'limi mavjud
 
 /* ENTERENCE */
+
+// console.log(__dirname);
 
 const app = express();
 // console.log("__dirname:", __dirname);
@@ -20,5 +23,7 @@ app.set("view engine", "ejs");
 
 
 /* ROUTERS  */
+
+app.use("/", router);
 
 export default app;

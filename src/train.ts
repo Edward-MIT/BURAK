@@ -1,3 +1,21 @@
+// H2-TASK:
+
+// Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+// MASALAN: getDigits("m14i1t") return qiladi "141"
+
+// masalani yechimi
+function getDigits(str: string): string {
+  return str
+    .split('')
+    .filter((char) => char >= '0' && char <= '9')
+    .join('');
+}
+
+console.log(getDigits("m14i1t"));
+
+
+
+
 // H-TASK:
 
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
@@ -5,12 +23,12 @@
 
 // yasalani yechimi
 
-function getPositive(arr: number[]): string {
-  return arr
-    .filter((num) => num > 0)
-    .join('');
-}
-console.log(getPositive([1, -3, 5]));
+// function getPositive(arr: number[]): string {
+//   return arr
+//     .filter((num) => num > 0)
+//     .join('');
+// }
+// console.log(getPositive([1, -3, 5]));
 
 
 

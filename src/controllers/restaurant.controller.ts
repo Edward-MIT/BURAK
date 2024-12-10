@@ -1,6 +1,5 @@
 import {Request, Response} from "express";
 import {T} from "../libs/types/common";
-import MemberServise from "../models/Member.server";
 
 
 const restaurantController: T = {};

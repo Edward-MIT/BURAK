@@ -6,6 +6,7 @@ const restaurantController: T = {};
 
 restaurantController.goHome = (req: Request, res: Response) =>{
   try {
+    console.log("GO home");
     res.send("Home page");
   } catch(err) {
     console.log("Error on router/HomePage", err);

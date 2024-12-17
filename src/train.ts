@@ -1,3 +1,27 @@
+// TASK J:
+
+// Shunday function tuzing, u string qabul qilsin.
+// Va string ichidagi eng uzun so'zni qaytarsin.
+
+// MASALAN: findLongestWord("I came from Uzbekistan!"); return "Uzbekistan!"
+
+// Yuqoridagi text tarkibida 'Uzbekistan'
+// eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda
+
+function findLongestWord(str: string): string {
+
+  const words: string[] = str.split(" ");
+  let longestWord: string = "";
+
+  for (let word of words) {
+      if (word.length > longestWord.length) {
+          longestWord = word;
+      }
+  }
+
+  return longestWord;
+}
+console.log(findLongestWord("I came from Uzbekistan!"));
 
 
 // TASK I:
@@ -13,27 +37,27 @@
 
 
 
-function majorityElement(arr: number[]): number {
-  let maxElement: number = arr[0];
-  let maxCount: number = 0;
+// function majorityElement(arr: number[]): number {
+//   let maxElement: number = arr[0];
+//   let maxCount: number = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    let count: number = 0;
-    for (let j = 0; j < arr.length; j++) {
-      if (arr[i] === arr[j]) {
-        count++;
-      }
-    }
-    if (count > maxCount) {
-      maxCount = count;
-      maxElement = arr[i];
-    }
-  }
+//   for (let i = 0; i < arr.length; i++) {
+//     let count: number = 0;
+//     for (let j = 0; j < arr.length; j++) {
+//       if (arr[i] === arr[j]) {
+//         count++;
+//       }
+//     }
+//     if (count > maxCount) {
+//       maxCount = count;
+//       maxElement = arr[i];
+//     }
+//   }
 
-  return maxElement;
-}
+//   return maxElement;
+// }
 
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
 
 
 

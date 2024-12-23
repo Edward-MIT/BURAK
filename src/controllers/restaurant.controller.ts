@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service";
-import { MemberInput } from "../libs/types/member";
+import { AdminRequest, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enam";
 import { LoginInput } from "../libs/types/member";
 const memberService = new MemberService();
@@ -44,18 +44,19 @@ restaurantController.getLogin = (req: Request, res: Response) =>{
 
 
 
-restaurantController.processSignup = async (req: Request, res: Response) =>{
+restaurantController.processSignup = async (req: AdminRequest, res: Response) =>{
   try {
     console.log("processSignUp");
 
     const newMember: MemberInput  = req.body;
     newMember.memberType = MemberType.RESTAURANT;
     const result = await memberService.processSignup(newMember);
-
-    // TODO SESSIONS
-
-
+   // TODO SESSIONS
+    req.session.member = result;
+    req.session.save(function(){
     res.send(result);
+    });
+
   } catch(err) {
     console.log("Error on router/processSignup", err);
     res.send(err)
@@ -63,7 +64,7 @@ restaurantController.processSignup = async (req: Request, res: Response) =>{
 
 };
 
-restaurantController.processLogin = async (req: Request, res: Response) =>{
+restaurantController.processLogin = async (req: AdminRequest, res: Response) =>{
   try {
     console.log("processLogin");
 
@@ -71,9 +72,11 @@ restaurantController.processLogin = async (req: Request, res: Response) =>{
     const result = await memberService.processLogin(input);
 
     // TODO SESION
-
-
+    req.session.member = result;
+    req.session.save(function(){
     res.send(result);
+    });
+
   } catch(err) {
     console.log("Error on router/processLogin", err);
     res.send(err);

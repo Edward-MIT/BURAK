@@ -3,11 +3,12 @@ import {Request, Response} from "express";
 import { T } from "../libs/types/common";
 import ProductService from "../models/Product.service";
 
+
 const productService = new ProductService();
 
 const productController: T ={};
 
-productController.getAllProducts = async (req: Request, res: Response) =>{
+productController.getAllProducts = async (req:Request, res: Response) =>{
   try {
     console.log("getAllProducts");
     res.render("products");

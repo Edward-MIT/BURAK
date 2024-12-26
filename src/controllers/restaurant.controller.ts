@@ -2,7 +2,7 @@ import {NextFunction, Request, Response} from "express";
 import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { AdminRequest, MemberInput } from "../libs/types/member";
-import { MemberType } from "../libs/enums/member.enam";
+import { MemberType } from "../libs/enums/member.enum";
 import { LoginInput } from "../libs/types/member";
 import Errors, { Message } from "../libs/Error";
 const memberService = new MemberService();

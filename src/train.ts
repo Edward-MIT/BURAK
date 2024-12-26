@@ -1,4 +1,29 @@
 
+/*
+
+TASK L:
+
+So'zlarni ketma - ketligini buzmasdan har bir so'zni
+alohida teskarisiga o'girib beradigan fucntion tuzing.
+Funtion yagona string qabul qilsin
+
+MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
+Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda
+
+*/
+
+
+function reverseSentence(str: string): string {
+  const words = str.split(/(\s+)/);
+
+  const reversedWords = words.map((word: string) => {
+    return word.split('').reverse().join('');
+  });
+
+  return reversedWords.join('');
+}
+
+console.log(reverseSentence("we like coding!"));
 
 // TASK K:
 
@@ -10,7 +35,7 @@
 // Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
 // bo'lganligi uchun '1'ni qaytarmoqda
 
-
+/*
 
 function countVowels(str: string): number {
   const vowels: string[] = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
@@ -27,6 +52,7 @@ function countVowels(str: string): number {
 }
 
 console.log(countVowels("string")); // 1
+*/
 
 
 

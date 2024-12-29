@@ -1,3 +1,33 @@
+/*
+
+TASK M:
+
+Shunday function tuzing, u raqamlardan tashkil topgan array qabul qilsin
+va array ichidagi har bir raqam uchun raqamning o'zi va hamda o'sha raqamni kvadratidan
+tashkil topgan object hosil qilib, hosil bo'lgan objectlarni array ichida qaytarsin
+
+MASALAN: MASALAN: getSquareNumbers([1, 2, 3]) return [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }];
+
+
+*/
+
+function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
+  // Har bir element uchun object yaratamiz
+  return numbers.map((number: number) => ({
+    number: number,          // Asl raqam
+    square: number * number // Kvadrati
+  }));
+}
+
+// Funksiyani sinab ko'ramiz
+const result = getSquareNumbers([1, 2, 3]);
+console.log(result);
+
+
+
+
+
+
 
 /*
 
@@ -10,7 +40,7 @@ Funtion yagona string qabul qilsin
 MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
 Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda
 
-*/
+
 
 
 function reverseSentence(str: string): string {
@@ -24,6 +54,8 @@ function reverseSentence(str: string): string {
 }
 
 console.log(reverseSentence("we like coding!"));
+
+*/
 
 // TASK K:
 

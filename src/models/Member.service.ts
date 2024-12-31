@@ -58,7 +58,6 @@ class MemberService {
     console.log('exist:', exist);
     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
-
     const salt = await bcrypt.genSalt();
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
 
@@ -69,8 +68,9 @@ class MemberService {
    } catch (err) {
     throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
    }
-
   }
+
+
   public async processLogin(input: LoginInput): Promise<Member>{
    const member = await this.memberModel
    .findOne({memberNick:input.memberNick}, {memberNick:1, memberPassword:1 })
@@ -93,6 +93,17 @@ class MemberService {
   //  console.log("result", result);
   //  return result;
    }
+
+
+   public async getUsers() : Promise<Member[]> {
+    const result = await this.memberModel.find({memberType: MemberType.USER}).exec();
+
+    if(!result) throw new Errors(HttpCode.NOT_FOUNT, Message.NO_DATA_FOUND);
+
+
+    return result;
+   }
+
 }
 
 export default MemberService;

@@ -1,4 +1,26 @@
 /*
+TASK-N:
+
+Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
+
+
+*/
+
+function palindromCheck(str: string): boolean {
+  const teskari: string = str.split('').reverse().join('');
+  return str === teskari;
+}
+
+console.log(palindromCheck("dad")); // true
+console.log(palindromCheck("son")); // false
+
+
+
+
+
+
+/*
 
 TASK M:
 
@@ -9,7 +31,7 @@ tashkil topgan object hosil qilib, hosil bo'lgan objectlarni array ichida qaytar
 MASALAN: MASALAN: getSquareNumbers([1, 2, 3]) return [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }];
 
 
-*/
+
 
 function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
   // Har bir element uchun object yaratamiz
@@ -25,7 +47,7 @@ console.log(result);
 
 
 
-
+*/
 
 
 

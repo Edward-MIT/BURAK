@@ -45,3 +45,4 @@ routerAdmin.post("/user/edit", restaurantController.verifyRestaurant, restaurant
 
 
 export default routerAdmin;
+//  men ko'pincha white dan foydalanaman shuning uchun mening ko'zim o'rganib qolgan endi bodi uxl

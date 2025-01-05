@@ -1,3 +1,29 @@
+
+/*
+*/
+
+
+function calculateSumOfNumbers(arr: any[]): number {
+  let sum: number = 0;
+
+
+  arr.forEach((item: any) => {
+    if (typeof item === 'number') {
+      sum += item;
+    }
+  });
+
+  return sum;
+}
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35])); // 45
+
+
+
+
+
+
+
+
 /*
 TASK-N:
 
@@ -5,7 +31,7 @@ Shunday function yozing, u string qabul qilsin va string palindrom yani togri oq
 MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
 
 
-*/
+
 
 function palindromCheck(str: string): boolean {
   const teskari: string = str.split('').reverse().join('');
@@ -17,7 +43,7 @@ console.log(palindromCheck("son")); // false
 
 
 
-
+*/
 
 
 /*

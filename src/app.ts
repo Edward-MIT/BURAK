@@ -23,8 +23,8 @@ const store = new MongoDBstore({
 
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(express.urlencoded({extended: true})); // tradidional API lar uchun
+app.use(express.json());  // rest ApI uchun
 app.use(morgan(MORGAN_FORMAT));
 
 /* SESSIONS */

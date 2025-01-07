@@ -3,7 +3,7 @@ const routerAdmin = express.Router();
 import restaurantController from "./controllers/restaurant.controller";
 import productController from "./controllers/product.controller"
 import makeUploader from "./libs/utils/uploader";
-import { verify } from "crypto";
+// import { verify } from "crypto";
 
 // Restaurant
 
@@ -16,7 +16,7 @@ routerAdmin
 
 routerAdmin
 .get("/signup",restaurantController.getSignup)
-.post("/signup", makeUploader("members").single("memberImage"), restaurantController.processSignup);
+.post("/signup", makeUploader("members").single("memberImage"),restaurantController.processSignup);
 
 routerAdmin.get("/logout",restaurantController.logout);
 
@@ -45,4 +45,3 @@ routerAdmin.post("/user/edit", restaurantController.verifyRestaurant, restaurant
 
 
 export default routerAdmin;
-//  men ko'pincha white dan foydalanaman shuning uchun mening ko'zim o'rganib qolgan endi bodi uxl

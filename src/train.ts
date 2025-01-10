@@ -1,11 +1,23 @@
 
+
+function hasProperty(obj: Record<string, any>, propName: string): boolean {
+  return obj.hasOwnProperty(propName);
+}
+
+// Misollar:
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+
+
+
+
+/*
 function objectToArray(obj: Record<string, any>): [string, any][] {
   return Object.entries(obj);
 }
 
 console.log(objectToArray({a: 10, b: 20}));
 
-/*
+
 
 
 

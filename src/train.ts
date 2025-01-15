@@ -1,4 +1,33 @@
 
+// MIT Task S
+
+function missingNumber(arr: number[]): number {
+  const n: number = arr.length; //
+  const expectedSum: number = (n * (n + 1)) / 2;
+  const actualSum: number = arr.reduce((a, b) => a + b, 0);
+  return expectedSum - actualSum;
+}
+
+console.log(missingNumber([3, 0, 1]));
+
+
+
+
+
+// MIT task R
+/*
+
+function calculate(input: string): number {
+  return eval(input);
+}
+
+console.log(calculate("1 + 3"));
+
+
+
+
+
+
 
 function hasProperty(obj: Record<string, any>, propName: string): boolean {
   return obj.hasOwnProperty(propName);
@@ -10,7 +39,7 @@ console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
 
 
 
-/*
+
 function objectToArray(obj: Record<string, any>): [string, any][] {
   return Object.entries(obj);
 }

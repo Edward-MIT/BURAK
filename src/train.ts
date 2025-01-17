@@ -1,14 +1,26 @@
 
-// MIT Task S
+// task T
 
-function missingNumber(arr: number[]): number {
-  const n: number = arr.length; //
-  const expectedSum: number = (n * (n + 1)) / 2;
-  const actualSum: number = arr.reduce((a, b) => a + b, 0);
-  return expectedSum - actualSum;
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  return [...arr1, ...arr2].sort((a, b) => a - b);
 }
 
-console.log(missingNumber([3, 0, 1]));
+// Test
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+
+
+
+// MIT Task S
+
+// function missingNumber(arr: number[]): number {
+//   const n: number = arr.length; //
+//   const expectedSum: number = (n * (n + 1)) / 2;
+//   const actualSum: number = arr.reduce((a, b) => a + b, 0);
+//   return expectedSum - actualSum;
+// }
+
+// console.log(missingNumber([3, 0, 1]));
 
 
 

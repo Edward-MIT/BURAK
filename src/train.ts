@@ -1,4 +1,21 @@
+// Task v
+
+function countChars(str: string): Record<string, number> {
+  let charCount: Record<string, number> = {};
+
+  for (let char of str) {
+      charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  return charCount;
+}
+
+console.log(countChars("hello"));
+
+
 // task U
+
+/*
 
 function sumOdds(number: number): number {
   let count = 0;
@@ -10,7 +27,7 @@ function sumOdds(number: number): number {
 
 console.log(sumOdds(9));  // 4
 
-
+*/
 
 
 

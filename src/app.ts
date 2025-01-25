@@ -3,6 +3,7 @@ import path from "path";
 import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import { MORGAN_FORMAT } from "./libs/config";
 
 import session from "express-session";
@@ -23,8 +24,9 @@ const store = new MongoDBstore({
 
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({extended: true}));   // tradidional API lar uchun
-app.use(express.json());  // rest ApI uchun
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT));
 
 /* SESSIONS */

@@ -14,7 +14,10 @@ class AuthService{
   public async createTooken(payload: Member) {
     return new Promise((resolve, reject) =>{
       const davomiylik = `${AUTH_TIMER}h`;
-      jwt.sign(payload, process.env.SECRET_TOKEN as string, {expiresIn: davomiylik
+      jwt.sign(
+        payload,
+        String (process.env.SECRET_TOKEN) ,
+        {expiresIn: davomiylik
 
       },(err, token) =>{
        if (err) reject(new Errors(HttpCode.UNAUTHORIZED, Message.TOKEN_CREATION_FAILED));

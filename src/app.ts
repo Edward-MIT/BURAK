@@ -11,7 +11,7 @@ import ConnectMongoDB from "connect-mongodb-session";
 import { T } from "./libs/types/common";
 
 const MongoDBstore = ConnectMongoDB(session);
-const store = new MongoDBstore({
+const storee = new MongoDBstore({
   uri: String (process.env.MONGO_URL),
   collection : "sessions"
 });
@@ -38,7 +38,7 @@ app.use(
     cookie: {
       maxAge: 1000 * 3600 * 3 // 3 hours
     },
-    store: store,
+    store: storee,
     resave: true,
     saveUninitialized: true
   })

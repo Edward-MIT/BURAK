@@ -13,6 +13,16 @@ class MemberService {
 
   /* SPA */
 
+  public async getRestaurant(): Promise<Member> {
+   const result = await this.memberModel
+   .findOne({memberType: MemberType.RESTAURANT})
+   .exec();
+
+   if(!result) throw new Errors (HttpCode.NOT_FOUNT, Message.NO_DATA_FOUND);
+
+  return result;
+  }
+
   public async signup(input: MemberInput) : Promise<Member> {
 
     const salt = await bcrypt.genSalt();
@@ -57,6 +67,7 @@ class MemberService {
 
   public async getMemberDetail (member: Member) : Promise<Member> {
    const memberId = shapeIntoMongooseObjectId(member._id);
+   console.log("memberId:", memberId)
    const result = await this.memberModel.findOne({_id: memberId, memberStatus: MemberStatus.ACTIVE }).exec();
    if (!result) throw new Errors(HttpCode.NOT_FOUNT, Message.NO_DATA_FOUND);
 
@@ -78,6 +89,16 @@ class MemberService {
     return result;
   }
 
+  public async getTopUsers(): Promise<Member[]> {
+   const result = await this.memberModel.find({
+    memberStatus: MemberStatus.ACTIVE,
+    memberPoints: {$gte:1},
+   }).sort({memberPoints: -1}).limit(4).exec();
+
+   if(!result) throw new Errors(HttpCode.NOT_FOUNT, Message.NO_DATA_FOUND);
+   return result;
+  }
+
 
 
 
@@ -86,7 +107,7 @@ class MemberService {
   public async processSignup(input: MemberInput) : Promise<Member> {
     const exist = await this.memberModel.findOne({memberType : MemberType.RESTAURANT}).exec();
     console.log('exist:', exist);
-    if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
+   if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
     const salt = await bcrypt.genSalt();
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);

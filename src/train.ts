@@ -1,5 +1,33 @@
+// Task X
+
+function countOccurrences(obj: Record<string, any>, key: string): number {
+  let count = 0;
+
+  function search(obj: Record<string, any>): void {
+      if (typeof obj !== 'object' || obj === null) {
+          return;
+      }
+
+      for (let k in obj) {
+          if (k === key) {
+              count++;
+          }
+          search(obj[k]);
+      }
+  }
+
+  search(obj);
+  return count;
+}
+
+console.log(countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model'));
+
+
+
 //  Task W
-function chunkArray<T>(arr: T[], size: number): T[][] {
+
+
+/*function chunkArray<T>(arr: T[], size: number): T[][] {
   let result: T[][] = [];
   for (let i = 0; i < arr.length; i += size) {
       result.push(arr.slice(i, i + size));
@@ -8,6 +36,7 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
 }
 
 console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+*/
 
 
 // Task v

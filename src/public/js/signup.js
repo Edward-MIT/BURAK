@@ -46,7 +46,7 @@ function validateSignupForm() {
     return false;
   }
 
-  if(memberPassword !==confirmPassword){
+  if(memberPassword !== confirmPassword){
     alert("Password differs, please check one more time!")
     return false;
   }

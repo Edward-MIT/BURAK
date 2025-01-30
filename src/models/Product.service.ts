@@ -1,12 +1,13 @@
-import { ProductCollection } from './../libs/enums/product.enum';
+import { ProductCollection, ProductStatus } from './../libs/enums/product.enum';
 import Errors from "../libs/Error";
 import { Product, ProductInput, ProductInquiry, ProductUpdateInput } from "../libs/types/product";
 import ProductModel from "../schema/Product.model";
 import { HttpCode } from "../libs/Error";
 import { Message } from "../libs/Error";
 import { shapeIntoMongooseObjectId } from "../libs/config";
-import { ProductStatus } from "../libs/enums/product.enum";
+// import { ProductStatus } from "../libs/enums/product.enum";
 import { T } from "../libs/types/common";
+import {ObjectId} from "mongoose";
 
 
 class ProductService {
@@ -44,6 +45,19 @@ class ProductService {
     if(!result) throw new Errors(HttpCode.NOT_FOUNT, Message.NO_DATA_FOUND);
 
     return result;
+  }
+
+  public async getProduct(memberId: ObjectId | null, id: string): Promise <Product> {
+    const productId = shapeIntoMongooseObjectId(id);
+
+    let result = await this.productModel.findOne({_id: productId, ProductStatus:ProductStatus.PROCESS}).exec();
+
+    if(!result) throw new Errors(HttpCode.NOT_FOUNT, Message.NO_DATA_FOUND);
+
+    //TODO if Authenticated users => first => view log creation
+
+    return result;
+
   }
 
   /** SSR **/

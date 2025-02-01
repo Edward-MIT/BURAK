@@ -1,12 +1,21 @@
-// Task Y
+// task z
 
+
+function sumEvens(arr: number[]): number {
+  return arr.reduce((sum: number, num: number) => num % 2 === 0 ? sum + num : sum, 0);
+}
+
+console.log(sumEvens([1, 2, 3, 4]))
+
+// Task Y
+/*
 function findIntersection(arr1: number[], arr2: number[]): number[] {
   return arr1.filter(value => arr2.includes(value));
 }
 
 console.log(findIntersection([1, 2, 3], [3, 2, 0]));
 
-
+*/
 
 
 

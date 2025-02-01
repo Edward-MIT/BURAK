@@ -1,8 +1,8 @@
 import mongoose, {Schema} from "mongoose";
 
 const orderItemSchema = new Schema({
-  itemQuentity: {
-    types: Number,
+  itemQuantity: {
+    type: Number,
     required:true
   },
 

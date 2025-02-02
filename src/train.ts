@@ -1,7 +1,7 @@
 // task z
 
 
-function sumEvens(arr: number[]): number {
+function  sumEvens(arr: number[]):number {
   return arr.reduce((sum: number, num: number) => num % 2 === 0 ? sum + num : sum, 0);
 }
 

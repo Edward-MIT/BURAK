@@ -100,6 +100,25 @@ class MemberService {
   }
 
 
+  public async addUserPoint(member: Member, point: number): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId(member._id);
+
+    return await this.memberModel.findOneAndUpdate(
+      {
+      _id: memberId,
+      memberType: MemberType.USER,
+      memberStatus: MemberStatus.ACTIVE
+     },
+      {$inc: {memberPoints: point}},
+      {new: true}
+
+    ).exec();
+  }
+
+
+
+
+
 
 
 
@@ -109,8 +128,8 @@ class MemberService {
     console.log('exist:', exist);
    if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
-    const tuz = await bcrypt.genSalt();
-    input.memberPassword = await bcrypt.hash(input.memberPassword,tuz);
+    const salt = await bcrypt.genSalt();
+    input.memberPassword = await bcrypt.hash(input.memberPassword,salt);
     try {
     const result = await this.memberModel.create(input);
     result.memberPassword = "";

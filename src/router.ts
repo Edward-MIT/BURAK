@@ -28,6 +28,8 @@ router.post("/order/create", memberController.verifyAuth, ordertController.creat
 
 router.get("/order/all", memberController.verifyAuth, ordertController.getMyOrders);
 
+router.post("/order/update", memberController.verifyAuth , ordertController.updateOrder);
+
 
 
 export default router;

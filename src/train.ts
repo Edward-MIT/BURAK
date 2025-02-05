@@ -1,11 +1,30 @@
+// Task ZA
+
+
+interface Person {
+  age: number;
+}
+
+const sortByAge = (arr: Person[]): Person[] =>
+  [...arr].sort((a, b) => a.age - b.age);
+
+
+const people: Person[] = [{ age: 23 }, { age: 21 }, { age: 13 }];
+console.log(sortByAge(people));
+
+
+
+
+
+
 // task z
 
 
-function  sumEvens(arr: number[]):number {
-  return arr.reduce((sum: number, num: number) => num % 2 === 0 ? sum + num : sum, 0);
-}
+// function  sumEvens(arr: number[]):number {
+//   return arr.reduce((sum: number, num: number) => num % 2 === 0 ? sum + num : sum, 0);
+// }
 
-console.log(sumEvens([1, 2, 3, 4]))
+// console.log(sumEvens([1, 2, 3, 4]))
 
 // Task Y
 /*

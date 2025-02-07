@@ -1,16 +1,29 @@
+//  Task ZC
+
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9/5) + 32;
+}
+
+// Misollar:
+console.log(celsiusToFahrenheit(0));  // 32
+console.log(celsiusToFahrenheit(10)); // 50
+console.log(celsiusToFahrenheit(100)); // 212
+
+
+
 // Task ZA
 
 
-interface Person {
-  age: number;
-}
+// interface Person {
+//   age: number;
+// }
 
-const sortByAge = (arr: Person[]): Person[] =>
-  [...arr].sort((a, b) => a.age - b.age);
+// const sortByAge = (arr: Person[]): Person[] =>
+//   [...arr].sort((a, b) => a.age - b.age);
 
 
-const people: Person[] = [{ age: 23 }, { age: 21 }, { age: 13 }];
-console.log(sortByAge(people));
+// const people: Person[] = [{ age: 23 }, { age: 21 }, { age: 13 }];
+// console.log(sortByAge(people));
 
 
 

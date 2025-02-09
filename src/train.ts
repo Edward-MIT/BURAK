@@ -1,14 +1,30 @@
-//  Task ZC
+// Task ZD
 
+function changeNumberInArray(firstNum: number, arr: number[], thirdNum: number): number[] {
+
+  const index: number = firstNum;
+  arr[index] = thirdNum;
+
+
+  return arr;
+}
+
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+
+
+
+
+//  Task ZC
+/*
 function celsiusToFahrenheit(celsius: number): number {
   return (celsius * 9/5) + 32;
 }
 
-// Misollar:
 console.log(celsiusToFahrenheit(0));  // 32
 console.log(celsiusToFahrenheit(10)); // 50
 console.log(celsiusToFahrenheit(100)); // 212
 
+*/
 
 
 // Task ZA

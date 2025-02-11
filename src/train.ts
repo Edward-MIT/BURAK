@@ -1,15 +1,26 @@
-// Task ZD
+// task ZE
 
-function changeNumberInArray(firstNum: number, arr: number[], thirdNum: number): number[] {
-
-  const index: number = firstNum;
-  arr[index] = thirdNum;
-
-
-  return arr;
+function removeDuplicate(str: string): string {
+  let uniqueChars: Set<string> = new Set(str);
+  return Array.from(uniqueChars).join('');
 }
 
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+console.log(removeDuplicate('stringg'));
+
+
+
+// Task ZD
+
+// function changeNumberInArray(firstNum: number, arr: number[], thirdNum: number): number[] {
+
+//   const index: number = firstNum;
+//   arr[index] = thirdNum;
+
+
+//   return arr;
+// }
+
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
 
 
 

@@ -1,5 +1,17 @@
-// task ZE
+// Task ZF
 
+function capitalizeWords(str: string): string {
+  return str.split(" ").map(word => {
+      return word.length > 2 ? word.charAt(0).toUpperCase() + word.slice(1) : word;
+  }).join(" ");
+}
+
+console.log(capitalizeWords('name should be a string'));
+
+
+
+// task ZE
+/*
 function removeDuplicate(str: string): string {
   let uniqueChars: Set<string> = new Set(str);
   return Array.from(uniqueChars).join('');
@@ -7,7 +19,7 @@ function removeDuplicate(str: string): string {
 
 console.log(removeDuplicate('stringg'));
 
-
+*/
 
 // Task ZD
 
